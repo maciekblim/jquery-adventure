@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+var adventure = require('adventure');
+var shop = adventure('jquery-adventure');
+
+shop.add('$( document ).ready()', function () { return require('./problems/ready') });
+shop.execute(process.argv.slice(2));
