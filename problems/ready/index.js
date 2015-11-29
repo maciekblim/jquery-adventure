@@ -1,12 +1,15 @@
+'use strict;'
+
 var fs = require('fs');
 var path = require('path');
 var verify = require('adventure-verify');
 var jsdom = require('jsdom');
 var sinon = require('sinon');
+var colorize = require('../colorize');
 var directory = __dirname;
 
-exports.problem = fs.createReadStream(directory + '/problem.txt');
-exports.solution = fs.createReadStream(directory + '/solution.txt');
+exports.problem = colorize(fs.readFileSync(directory + '/problem.txt', 'utf-8'));
+exports.solution = colorize(fs.readFileSync(directory + '/solution.txt', 'utf-8'));
 
 exports.verify = verify({ modeReset: true }, function (args, t) {
     var solution = fs.readFileSync(path.resolve(args[0]), 'utf-8');

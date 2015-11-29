@@ -1,5 +1,6 @@
 Here is the reference solution, if you're curious:
-
-$( document ).ready(function() {
-    console.log( "ready!" );
-});
+{{ code }}
+    ( document ).ready(function() {
+        console.log( "ready!" );
+    });
+{{/ code }}

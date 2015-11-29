@@ -1,23 +1,26 @@
 A page can't be manipulated safely until the document is "ready." jQuery detects this state of readiness for you. Code included inside $( document ).ready() will only run once the page Document Object Model (DOM) is ready for JavaScript code to execute. Code included inside $( window ).load(function() { ... }) will run once the entire page (images or iframes), not just the DOM, is ready.
-
+{{ code }}
 // A $( document ).ready() block.
 $( document ).ready(function() {
     console.log( "ready!" );
 });
+{{/ code }}
 
 Experienced developers sometimes use the shorthand $() for $( document ).ready().
-
+{{ code }}
 // Shorthand for $( document ).ready()
 $(function() {
     console.log( "ready!" );
 });
+{{/ code }}
 
 You can also pass a named function to $( document ).ready() instead of passing an anonymous function.
-
+{{ code }}
 // Passing a named function instead of an anonymous function.
 function readyFn( jQuery ) {
     // Code to run when the document is ready.
 }
+{{/ code }}
 
 /////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////
