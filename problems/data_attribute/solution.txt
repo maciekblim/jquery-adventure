@@ -1,0 +1,7 @@
+Here is the reference solution, if you're curious:
+{{ code }}
+    function getToken() {
+      var $el = $('[data-title="Sherlock Holmes"]');
+      return $el.data('token');
+    }
+{{/ code }}
