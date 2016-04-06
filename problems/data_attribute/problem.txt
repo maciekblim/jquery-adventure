@@ -17,22 +17,22 @@ storing logic data. For such operation we should use HTML data attribute. Syntax
   <p data-id="1">...</p>
 {{/ code }}
 
-We can use data attributes as selectors to find element.
-
-{{ code }}
-  $('[data-name="exampleName"]');
-{{/ code }}
-
-We can also get data attribute from element.
+With jQuery we can easily get data attribute from element.
 
 {{ code }}
   $('.element').data('name');
 {{/ code }}
 
+By providing second argument we can also set data attributes.
+
+{{ code }}
+  $('.element').data('name', 'myName');
+{{/ code }}
+
 /////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////
 
-Write a function that finds element with data-title="Sherlock Holmes" and returns value of data-token attribute of that element.
+Write a function that finds element with class="myElement", then set data-title to 'jQuery rocks' and return value of data-token attribute of that element.
 
 
 Use `./$ADVENTURE_COMMAND verify PROGRAM.js` to verify your program.

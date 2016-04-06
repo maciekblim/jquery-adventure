@@ -13,7 +13,9 @@ exports.verify = verifySolution({
     directory: directory,
     solutionTest: function(docElement, args, t, spy) {
         var window = docElement.defaultView;
-        t.equal(window.$('[data-title="Sherlock Holmes"]').data('token'), window.getToken());
+        var $el = window.$('.myElement');
+        t.equal($el.data('token'), window.getToken());
+        t.equal($el.data('title'), 'jQuery rocks');
         t.end();
     }
 });

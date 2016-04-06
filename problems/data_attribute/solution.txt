@@ -1,7 +1,8 @@
 Here is the reference solution, if you're curious:
 {{ code }}
     function getToken() {
-      var $el = $('[data-title="Sherlock Holmes"]');
+      var $el = $('.myElement');
+      $el.data('title', 'jQuery rocks');
       return $el.data('token');
     }
 {{/ code }}
