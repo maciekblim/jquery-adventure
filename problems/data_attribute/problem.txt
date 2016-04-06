@@ -1,0 +1,38 @@
+Let's assume common rails application view case:
+
+{{ code }}
+  # app/views/users/index.haml
+  <% @users.each do |u| %>
+    <p><%= u.name %> </p>
+  <% end %>
+{{/ code }}
+
+We iterate over collection and create some markup for each element. When adding some javascript to our view we may need to access data from collection than is not presented to the user.
+
+For example when we click on <p></p> element we want to sent ajax request with corresponding user id. Since we want user.name to be the only visible data from object we need to store id somewhere else.
+Common mistake here is to store user.id in class or id attribute in form of string key 'user-1'. We should avoid this because id and class attributes serves different purpose than
+storing logic data. For such operation we should use HTML data attribute. Syntax looks like this
+
+{{ code }}
+  <p data-id="1">...</p>
+{{/ code }}
+
+With jQuery we can easily get data attribute from element.
+
+{{ code }}
+  $('.element').data('name');
+{{/ code }}
+
+By providing second argument we can also set data attributes.
+
+{{ code }}
+  $('.element').data('name', 'myName');
+{{/ code }}
+
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+
+Write a function that finds element with class="myElement", then set data-title to 'jQuery rocks' and return value of data-token attribute of that element.
+
+
+Use `./$ADVENTURE_COMMAND verify PROGRAM.js` to verify your program.

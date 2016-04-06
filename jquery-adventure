@@ -4,4 +4,5 @@ var adventure = require('adventure');
 var shop = adventure('jquery-adventure');
 
 shop.add('$( document ).ready()', function () { return require('./problems/ready') });
+shop.add('data attribute', function () { return require('./problems/data_attribute') });
 shop.execute(process.argv.slice(2));
