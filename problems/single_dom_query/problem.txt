@@ -1,0 +1,44 @@
+DOM querying and manipulation are one of most time consuming operations in javascript.
+Because of that we should always try to reduce them to minimum.
+Simple querying for our element looks like this:
+
+{{ code }}
+  $('.myClass').hide();
+{{/ code }}
+
+But often we may want to perform more than one operation on single element
+
+{{ code }}
+  $('.myClass').addClass('visible');
+  $('.myClass').data('visible', true);
+  $('.myClass').show();
+{{/ code }}
+
+This code is unefficient because we are three times traversing DOM tree to find same element.
+In such case it is good practice to perform single query and store in variable. Then perform all operation on stored element as below:
+
+{{ code }}
+  var $el = $('.myClass');
+  $el.addClass('visible');
+  $el.data('visible', true);
+  $el.show();
+{{/ code }}
+
+We can optimize it even more. jQuery functions operating on elements are returning these elements so we can chain our function calls.
+
+{{ code }}
+  var $el = $('.myClass');
+  $el.addClass('visible').data('visible', true).show();
+{{/ code }}
+
+Note how variables containing jQuery objects are name with '$' prefix. It is a good practice to distinguish what is stored in variable.
+
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+
+Write a function that finds element with class="myElement", then add class 'hidden' and hide element.
+
+HINT: $(..).addClass('example'), $(..).hide()
+
+
+Use `./$ADVENTURE_COMMAND verify PROGRAM.js` to verify your program.
