@@ -6,4 +6,5 @@ var shop = adventure('jquery-adventure');
 shop.add('$( document ).ready()', function () { return require('./problems/ready') });
 shop.add('data attribute', function () { return require('./problems/data_attribute') });
 shop.add('querying dom', function () { return require('./problems/single_dom_query') });
+shop.add('iterating elements collections', function () { return require('./problems/iterating_objects') });
 shop.execute(process.argv.slice(2));

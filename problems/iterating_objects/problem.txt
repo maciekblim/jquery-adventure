@@ -1,0 +1,57 @@
+Javascript has poor standard library. It lacks many functions available to programer in other script languages like ruby or python.
+We need to include additional libraries which implements those function.
+jQuery itself provides us with few utility functions.
+In this exercise we will explore two iteration methods, '$.each()' and '.each()'.
+First one is applied to arrays, it takes two arguments, array to iterate and iteration function.
+
+{{ code }}
+  var myArray = [1, 2, 3];
+  $.each(array, function(index, element) {
+    ....
+  });
+{{/ code }}
+
+It is alternative to standard for loop.
+
+{{ code }}
+  var myArray = [1, 2, 3];
+  $.each(array, function(index, element) {
+    ....
+  });
+{{/ code }}
+
+The second one, '.each()' will be more interesting for us. It operates on collection of elements and is used more often.
+It is called on jQuery objetct and takes one argument, function to call for each iteration with two arguments, index and element.
+
+{{ code }}
+  $('.myClass').each(function(index, element) {
+    $(element).addClass(...)
+  });
+{{/ code }}
+
+For some operations we don't have to iterate collection manually, jQuery does it for us under the hood.
+In example below to every element with class `myClass` will be added class `secondClass`.
+
+{{ code }}
+  $('.myClass').addClass('secondClass');
+{{/ code }}
+
+Some functions in jQuery serves as getters without arguments or setters if we will pass some ('text', 'val', 'data').
+If we will pass function as argument, it will be applied to each element and returned value will be set.
+Arguments passed to callback are index and current value of property.
+
+{{ code }}
+  $('.myClass').text(function(index, value) {
+    return text + 'hello';
+  });
+{{/ code }}
+
+
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+Exercise have two separate steps but you have to verify them as single solution file.
+
+1. Set css 'color' property to 'red' for all elements with class 'blog-post'.
+2. For each element with class 'comment' read its 'name' attribute value and insert it with '.text()' method to this element.
+
+Use `./$ADVENTURE_COMMAND verify PROGRAM.js` to verify your program.
